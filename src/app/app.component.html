@@ -1,0 +1,16 @@
+<form #userForm="ngForm" (ngSubmit)="submitForm(userForm)">
+  <label for=""><span class="error">*</span>First Name</label>
+  <input type="text" name="fName" ngModel #firstName="ngModel" required><span class="error" *ngIf="firstName.touched &&firstName.invalid">Please fill out First Name</span><br><br>
+  <label for=""><span class="error">*</span>Last Name</label>
+  <input type="text" name="lName" ngModel #lastName="ngModel" required><span class="error" *ngIf="lastName.touched && lastName.invalid">Please fill out Last Name</span><br><br>
+  <label for=""><span class="error">*</span>Favorite Color</label>
+  <input type="text" name="fColor" ngModel #colorName="ngModel" required><span class="error" *ngIf="colorName.touched && colorName.invalid">Please fill out your Favorite Color</span><br><br>
+  <label for=""><span class="error">*</span>Favorite City</label>
+  <input type="text" name="fCity" ngModel #cityName="ngModel" required><span class="error" *ngIf="cityName.touched && cityName.invalid">Please fill out your Favorite City</span><br><br>
+  <button type="submit"[disabled]="userForm.invalid">SUBMIT
+</button>
+
+</form>
+
+<h2>form status -- {{userForm.touched}}</h2>
+<h2>form valid -- {{userForm.valid}}</h2>
